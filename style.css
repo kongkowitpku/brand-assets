@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Heebo";
+  src: url("fonts/heebo-regular.woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Heebo";
+  src: url("fonts/heebo-bold.woff");
+  font-weight: 600;
+}
+
+/* Variables */
+:root {
+  --sd-brand-black: hsl(348, 9%, 10%); /* #1D1819; */
+  --sd-brand-red: hsl(358, 79%, 51%); /* #E52129; */
+  --sd-brand-grey: hsl(0, 100%, 95%); /* #FFE5E5; */
+  --sd-brand-white: #fff;
+
+  --sd-green: hsl(145, 66%, 43%); /* #26b763 */
+  --sd-gray-extralight: hsl(30, 10%, 96%); /* #f6f5f4 */
+  --sd-gray-light: hsl(30, 10%, 92%);
+  --sd-gray: hsl(30, 10%, 85%);
+  --sd-gray-dark: hsl(257, 23%, 20%);
+  --sd-gray-extradark: hsl(257, 23%, 16%); /* #241f31 */
+  --sd-blue: hsl(200, 66%, 55%);
+
+  --sd-highlight-bg-light: rgba(255, 255, 255, 1);
+  --sd-highlight-bg-dark: rgba(0, 0, 0, 0.6);
+  --sd-highlight-inline-bg-light: rgba(0, 0, 0, 0.07);
+  --sd-highlight-inline-bg-dark: rgba(255, 255, 255, 0.1);
+
+  --sd-font-weight-normal: 400;
+  --sd-font-weight-bold: 600;
+
+  /* Light mode variables */
+  --sd-foreground-color: var(--sd-gray-extradark);
+  --sd-background-color: var(--sd-gray-extralight);
+  --sd-logo-color: var(--sd-brand-black);
+  --sd-link-color: var(--sd-green);
+  --sd-small-color: var(--sd-gray-dark);
+  --sd-highlight-bg: var(--sd-highlight-bg-light);
+  --sd-highlight-inline-bg: var(--sd-highlight-inline-bg-light);
+  --sd-link-font-weight: var(--sd-font-weight-bold);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --sd-foreground-color: var(--sd-gray);
+    --sd-background-color: var(--sd-brand-black);
+    --sd-logo-color: var(--sd-brand-white);
+    --sd-link-color: var(--sd-brand-red);
+    --sd-small-color: var(--sd-gray);
+    --sd-highlight-bg: var(--sd-highlight-bg-dark);
+    --sd-highlight-inline-bg: var(--sd-highlight-inline-bg-dark);
+    --sd-link-font-weight: var(--sd-font-weight-normal);
+  }
+}
+
+/* Typography */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+body {
+  color: var(--sd-foreground-color);
+  background-color: var(--sd-background-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 0.625rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+h1 {
+  text-align: center;
+  font-size: 1.87rem;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 650px) {
+  h1 {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 2.375em;
+  }
+}
+h2 {
+  font-size: 1.25rem;
+  margin-top: 2.5em;
+}
+h3 {
+  font-size: 1.15rem;
+}
+a {
+  font-weight: var(--sd-link-font-weight);
+  text-decoration: none;
+  color: var(--sd-link-color);
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+b {
+  font-weight: 600;
+}
+small {
+  color: var(--sd-small-color);
+}
+
+/* Layout */
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-block {
+  flex: 1 1 300px;
+}
+
+.image-container {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.2rem;
+}
+
+.image-container > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-block > p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Singletons */
+.page-logo {
+  display: block;
+  padding: 5rem 0 3rem;
+  color: var(--sd-logo-color);
+}
+.page-logo > svg {
+  display: block;
+  width: 12.625em;
+  height: auto;
+  margin: 0 auto;
+}
+
+.palette {
+  border-radius: 6px;
+  padding: 3px 6px;
+}
+
+.brand-grey {
+  background-color: var(--sd-brand-grey);
+}
+
+.brand-white {
+  background-color: var(--sd-brand-white);
+}
+
+.brand-red {
+  background-color: var(--sd-brand-red);
+  color: var(--sd-brand-white);
+}
+
+.brand-black {
+  background-color: var(--sd-brand-black);
+  color: var(--sd-brand-white);
+}
+@media (prefers-color-scheme: dark) {
+  .brand-black {
+    background-color: var(--sd-gray-extralight);
+    color: var(--sd-brand-black);
+  }
+}
+
+.color-blue {
+  color: var(--sd-blue);
+}
+
+.page-link::after {
+  content: " ➜";
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3em 0 3em;
+  font-size: 1em;
+  margin-top: 4rem;
+}
