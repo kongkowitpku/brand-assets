@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://assets.kongkowitpku.xyz/assets/svg/kongkow-icon-dark-square.svg" height="70" alt="Logo">
+    <img src="https://brand-assets.kongkowitpku.xyz/assets/svg/kongkow-icon-dark-square.svg" height="70" alt="Logo">
     <h1>Kongkow IT Pekanbaru</h1>
     <a href="https://kongkowitpku.xyz">https://kongkowitpku.xyz</a>
 </div>
